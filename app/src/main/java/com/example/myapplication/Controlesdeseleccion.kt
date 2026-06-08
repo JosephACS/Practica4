@@ -57,11 +57,10 @@ class Controlesdeseleccion : AppCompatActivity() {
                     }
                     .decodeList<Alumno>()
 
-                val lstNombresAlumnos = listaAlumnos.map { it.nombres ?: "" }
-                val adapterAlumnos = ArrayAdapter(
+                val adapterAlumnos = AlumnoAdapter(
                     this@Controlesdeseleccion,
-                    android.R.layout.simple_spinner_dropdown_item,
-                    lstNombresAlumnos
+                    R.layout.item_alumno,
+                    listaAlumnos
                 )
                 listV.adapter = adapterAlumnos
 
